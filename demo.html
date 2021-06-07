@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Page</title>
+  <style>
+   @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,500&display=swap');
+   
+    * {
+      box-sizing: border-box;
+    }
+
+    /* full màng hình */
+    body,
+    html {
+      height: 100%;
+      margin: 2;
+      font-family:'Montserrat', sans-serif;
+    }
+
+
+    .tablink {
+      background-color: yellowgreen;
+      color: white;
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      font-size: 17px;
+      width: 25%;
+    }
+
+    .tablink:hover {
+      background-color: rgb(27, 197, 209);
+    }
+
+
+    .tabcontent {
+      color: white;
+      display: none;
+      padding: 100px 20px;
+      height: 100%;
+
+    }
+
+    .head {
+      background-color: #f1f1f1;
+      padding: 30px;
+      text-align: center;
+    }
+    .name{
+      float: left;
+      padding: 0 0 0 30px;
+    }
+   
+    .video_right{
+    
+      height: auto;
+      max-width: 50%; 
+      float: right;
+      
+    }
+    .video_left{
+      max-width: 50%;
+      float: left;
+    }
+
+    #Home  { background-image: url('hinhanh/Hình-nền-background-vector-scaled.jpg'); min-height: 35em;}
+    #News { background-image: url('hinhanh/Hình-nền-background-vector-scaled.jpg'); min-height: 35em;}
+    #Contact {background-image:url('hinhanh/Hình-nền-background-vector-scaled.jpg'); min-height: 35em;}
+    #About {background-image:url('hinhanh/Hình-nền-background-vector-scaled.jpg'); min-height: 35em;}
+  </style>
+</head>
+
+<body>
+  <div class="head">
+    <h2 style="text-align: center;"> GIỚI THIỆU VỀ BẢN THÂN </h2>
+    <p>NGUYỄN VĂN LUÂN</p>
+    <p>Developer Javascript</p>
+  </div>
+
+  <button class="tablink" onclick="openPage('Home', this, 'red')" id="defaultOpen" > <i class="fa fa-fw fa-home"></i> SƠ LƯỢT VỀ BẢN THÂN</button>
+  <button class="tablink" onclick="openPage('News', this, 'green')"><i class="fa fa-fw fa-user"></i> TÌNH TRẠNG HÔN NHÂN</button>
+  <button class="tablink" onclick="openPage('Contact', this, 'blue')"><i class="fa fa-book fa-fw"></i> CÁC SKILL</button>
+  <button class="tablink" onclick="openPage('About', this, 'orange')"><i class="fa fa-cog fa-fw"></i> SỞ THÍCH</button>
+
+  <div id="Home" class="tabcontent">
+    <h1>Giới thiệu bản thân</h1>
+
+    <img src="hinhanh/page.jpg"  style="max-width:25%; border: 5px; float: left; border-radius: 10px; border: 3px solid white " title="ảnh_của_luân">
+
+    <div class="name">
+      <p> <strong>Họ và tên:</strong> Nguyễn văn Luân</p>
+      <p> <strong>Tuối:</strong> 23 Tuổi</p>
+      <p> <strong>Sinh sống:</strong> Thành Phố Đà Nẵng</p>
+    </div>
+  </div>
+
+  <div id="News" class="tabcontent">
+    <h1 style="text-align: center;">ĐỘC THÂN</h1>
+    <div class="video_left">
+      <h1 style="font-style: italic;">ĐỘC THÂN KHÔNG PHẢI LÀ Ế </h1>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/6MytkoDoTFs" title="YouTube video player"
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
+  <div class="video_right">
+    <h1 style="font-style: italic; ">Ở VẬY CHO GÁI THÈM CHƠI</h1>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/QcPK9lPJP4g" title="YouTube video player"
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+  </div>
+  
+  </div>
+
+  <div id="Contact" class="tabcontent">
+    <h1 style="text-align: center;">CÁC SKILL HTML CƠ BẢN</h1>
+    <div class="bullet point">
+      <ul>
+        <li>HTML / CSS / JS</li>
+        <li>Git và Github</li>
+        <li>Browser DevTools</li>
+        <li>MVC (Model, View, Controller)</li>
+        <li> Kiểm tra code hay write test</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div id="About" class="tabcontent">
+    <h1 style="text-align: center;">SỞ THÍCH CỦA TÔI</h1>
+    <div>
+      <ul>
+        <li>Đi du lịch</li>
+        <li>Kiếm tiền</li>
+        <li>Mua xe</li>
+       
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    function openPage(pageName, elmnt, color) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablink");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].style.backgroundColor = "";
+      }
+      document.getElementById(pageName).style.display = "block";
+      elmnt.style.backgroundColor = color;
+    }
+    document.getElementById("defaultOpen").click();
+  </script>
+
+</body>
+
+</html>
